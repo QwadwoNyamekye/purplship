@@ -1,0 +1,4 @@
+from purplship.carriers.canadapost.pickup.create_pickup import create_pickup_request
+from purplship.carriers.canadapost.pickup.update_pickup import update_pickup_request
+from purplship.carriers.canadapost.pickup.request_pickup import parse_pickup_response
+from purplship.carriers.canadapost.pickup.cancel_pickup import cancel_pickup_request

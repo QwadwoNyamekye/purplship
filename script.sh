@@ -50,13 +50,22 @@ alias env:reset=init
 # Project helpers
 
 # shellcheck disable=SC2120
-test() {
+test_all() {
     if [[ "$1" == "-i" ]]; then
       install_submodules
     fi
     cd "${ROOT:?}"
     r=$(coverage run -m unittest discover -v "${ROOT:?}/tests")
     cd -
+    $r || false
+}
+
+test() {
+    pushd "$1" || false
+    pip install . > /dev/null
+    r=$(python -m unittest discover -v)
+    pip install -e . > /dev/null
+    popd || false
     $r || false
 }
 
