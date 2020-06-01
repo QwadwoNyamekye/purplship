@@ -48,3 +48,8 @@ class Proxy(ABC):
         raise MethodNotSupportedError(
             self.__class__.cancel_pickup.__name__, self.__class__.__name__
         )
+
+    def validate_address(self, request: Serializable) -> Deserializable:
+        raise MethodNotSupportedError(
+            self.__class__.validate_address.__name__, self.__class__.__name__
+        )
