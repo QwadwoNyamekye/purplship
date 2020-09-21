@@ -6,6 +6,6 @@ gateway = api.gateway["dhl"].create(
         password="password",
         carrier_id="carrier_id",
         account_number="123456789",
-        id="testing_id",
+        id="testing_id"
     )
 )
